@@ -1,0 +1,42 @@
+-- Ultimate Hub
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Ultimate Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local PlayerTab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+loca Section = PlayerTab:AddSection({
+	Name = "Movement"
+})
+
+PlayerTab:AddSlider({
+	Name = "Walkspeed",
+	Min = 50,
+	Max = 500,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+		game.Player.localPlayer.Character.Humanoid.Walkspeed = Value
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "Jump Hight",
+	Min = 50,
+	Max = 500,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,2 55),
+	Increment = 1,
+	ValueName = "Jump",
+	Callback = function(Value)
+		game.Player.localPlayer.Character.Jumpower = Value
+	end    
+})
+
